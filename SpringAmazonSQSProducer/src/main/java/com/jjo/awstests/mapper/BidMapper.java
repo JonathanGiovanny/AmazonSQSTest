@@ -1,8 +1,8 @@
-package com.jjo.h2.mapper;
+package com.jjo.awstests.mapper;
 
 import org.mapstruct.Mapper;
-import com.jjo.h2.dto.Bid;
-import com.jjo.h2.model.BidEntity;
+import com.jjo.awstests.dto.Bid;
+import com.jjo.awstests.model.BidEntity;
 
 @Mapper(componentModel = "spring")
 public interface BidMapper {

@@ -1,8 +1,9 @@
-package com.jjo.h2.config;
+package com.jjo.awstests.config;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
@@ -32,7 +33,7 @@ public class DatasourceH2 {
   static final String BASE_PACKAGES = "com.jjo.h2.repositories";
 
   @Bean
-  public AuditorAware<String> auditorAware() {
+  public AuditorAware<User> auditorAware() {
     return new AuditorAwareImpl();
   }
 

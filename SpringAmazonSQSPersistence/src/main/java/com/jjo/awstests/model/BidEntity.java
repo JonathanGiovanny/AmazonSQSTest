@@ -1,4 +1,4 @@
-package com.jjo.h2.model;
+package com.jjo.awstests.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

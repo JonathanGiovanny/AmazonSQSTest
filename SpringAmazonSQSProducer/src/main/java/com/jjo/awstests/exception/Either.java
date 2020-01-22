@@ -1,4 +1,4 @@
-package com.jjo.h2.exception;
+package com.jjo.awstests.exception;
 
 import java.util.Optional;
 import java.util.function.Consumer;

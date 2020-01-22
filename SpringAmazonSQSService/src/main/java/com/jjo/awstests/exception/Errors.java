@@ -1,4 +1,4 @@
-package com.jjo.h2.exception;
+package com.jjo.awstests.exception;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

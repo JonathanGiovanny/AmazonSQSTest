@@ -1,6 +1,6 @@
-package com.jjo.h2.services;
+package com.jjo.awstests.services;
 
-import com.jjo.h2.model.BidEntity;
+import com.jjo.awstests.model.BidEntity;
 
 public interface BidService {
 

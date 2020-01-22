@@ -1,4 +1,4 @@
-package com.jjo.h2.config;
+package com.jjo.awstests.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.aws.messaging.core.QueueMessagingTemplate;

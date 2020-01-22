@@ -1,4 +1,4 @@
-package com.jjo.h2.config.security;
+package com.jjo.awstests.config;
 
 import java.time.LocalDateTime;
 import java.util.LinkedHashMap;
@@ -6,7 +6,7 @@ import java.util.Map;
 import org.springframework.boot.web.servlet.error.DefaultErrorAttributes;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.WebRequest;
-import com.jjo.h2.exception.Errors;
+import com.jjo.awstests.exception.Errors;
 
 @Component
 public class CustomErrorAttributes extends DefaultErrorAttributes {

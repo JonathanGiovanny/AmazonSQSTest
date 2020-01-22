@@ -1,4 +1,4 @@
-package com.jjo.h2.dto;
+package com.jjo.awstests.dto;
 
 import java.math.BigDecimal;
 import lombok.AllArgsConstructor;

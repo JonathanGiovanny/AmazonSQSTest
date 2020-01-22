@@ -1,4 +1,4 @@
-package com.jjo.h2.controller.validator;
+package com.jjo.awstests.controller.validator;
 
 import java.util.List;
 import javax.validation.ConstraintValidator;

@@ -1,4 +1,4 @@
-package com.jjo.h2.controller;
+package com.jjo.awstests.controller;
 
 import javax.validation.Valid;
 import org.springframework.web.bind.WebDataBinder;
@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.jjo.h2.controller.validator.BidValidator;
-import com.jjo.h2.dto.Bid;
-import com.jjo.h2.mapper.BidMapper;
-import com.jjo.h2.services.BidService;
+import com.jjo.awstests.controller.validator.BidValidator;
+import com.jjo.awstests.dto.Bid;
+import com.jjo.awstests.mapper.BidMapper;
+import com.jjo.awstests.services.BidService;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 

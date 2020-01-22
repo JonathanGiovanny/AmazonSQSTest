@@ -1,9 +1,9 @@
-package com.jjo.h2.controller.validator;
+package com.jjo.awstests.controller.validator;
 
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
-import com.jjo.h2.dto.Bid;
+import com.jjo.awstests.dto.Bid;
 
 @Component
 public class BidValidator implements Validator {

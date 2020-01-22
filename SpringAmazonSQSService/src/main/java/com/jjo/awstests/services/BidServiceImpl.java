@@ -1,8 +1,8 @@
-package com.jjo.h2.services;
+package com.jjo.awstests.services;
 
 import org.springframework.stereotype.Service;
-import com.jjo.h2.model.BidEntity;
-import com.jjo.h2.repositories.BidRepository;
+import com.jjo.awstests.model.BidEntity;
+import com.jjo.awstests.repositories.BidRepository;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

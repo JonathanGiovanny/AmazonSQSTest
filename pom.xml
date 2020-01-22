@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.jjo</groupId>
 	<artifactId>SpringAmazonSQS</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>${project.version}</version>
 	<packaging>pom</packaging>
 	<name>SpringAmazonSQS</name>
 
@@ -18,11 +18,14 @@
 	<properties>
 		<java.version>11</java.version>
 		<mapstruct.version>1.3.1.Final</mapstruct.version>
+		<project.version>0.1</project.version>
 	</properties>
 
 	<modules>
 		<module>SpringAmazonSQSProducer</module>
 		<module>SpringAmazonSQSConsumer</module>
+		<module>SpringAmazonSQSPersistence</module>
+		<module>SpringAmazonSQSService</module>
 	</modules>
 
 	<dependencies>
@@ -36,6 +39,18 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
 		</dependency>
 	</dependencies>
 

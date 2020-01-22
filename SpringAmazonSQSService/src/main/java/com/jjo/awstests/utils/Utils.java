@@ -1,12 +1,12 @@
-package com.jjo.h2.utils;
+package com.jjo.awstests.utils;
 
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Stream;
-import com.jjo.h2.exception.Errors;
-import com.jjo.h2.exception.HException;
+import com.jjo.awstests.exception.Errors;
+import com.jjo.awstests.exception.HException;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass
