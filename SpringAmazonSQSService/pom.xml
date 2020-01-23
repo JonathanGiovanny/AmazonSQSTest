@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.jjo</groupId>
 		<artifactId>SpringAmazonSQS</artifactId>
-		<version>${project.version}</version>
+		<version>${revision}</version>
 	</parent>
 
 	<artifactId>SpringAmazonSQSService</artifactId>

@@ -1,6 +1,7 @@
 package com.jjo.awstests.dto;
 
 import java.math.BigDecimal;
+import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,5 +15,6 @@ public class Bid {
 
   private Long id;
   private String name;
+  @NotNull
   private BigDecimal price;
 }
