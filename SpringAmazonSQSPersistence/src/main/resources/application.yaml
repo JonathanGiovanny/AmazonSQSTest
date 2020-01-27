@@ -1,0 +1,16 @@
+spring:
+    jpa:
+        open-in-view: false
+    h2:
+        console:
+            enabled: true
+    datasource:
+#        url: jdbc:h2:tcp://localhost/~/Seviper
+        jdbc-url: jdbc:h2:mem:testSeviper
+        username: admin
+        password: Asdf963.
+        driver-class-name: org.h2.Driver
+
+hibernate:
+    dialect: default
+    current_session_context_class: thread

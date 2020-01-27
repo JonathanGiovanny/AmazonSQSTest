@@ -1,44 +1,40 @@
 package com.jjo.awstests.config;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
+@ComponentScan(basePackages = {"com.jjo.awstests.repositories"})
 @EnableTransactionManagement
-@EnableJpaRepositories/*(basePackages = DatasourceH2.BASE_PACKAGES, //
-    entityManagerFactoryRef = DatasourceH2.ENTITY_MANAGER, //
-    transactionManagerRef = DatasourceH2.TRANSACTION_MANAGER)*/
+@EnableJpaRepositories(basePackages = {"com.jjo.awstests.repositories"})
 public class DatasourceH2 {
 
-//  public static final String ENTITY_MANAGER = "entityManager";
-//  static final String TRANSACTION_MANAGER = "transactionManagerDataH2";
-//
-//  static final String BASE_PACKAGES = "com.jjo.h2.repositories";
+  @Value(value = "${spring.datasource.driver-class-name}")
+  private String driverClassName;
 
-  @Primary
+  @Value(value = "${spring.datasource.jdbc-url}")
+  private String url;
+
+  @Value(value = "${spring.datasource.username}")
+  private String username;
+
+  @Value(value = "${spring.datasource.password}")
+  private String password;
+
   @Bean
-  @ConfigurationProperties("spring.datasource")
   public HikariDataSource dataSource() {
-    return DataSourceBuilder.create().type(HikariDataSource.class).build();
+    return DataSourceBuilder.create()
+        .driverClassName(driverClassName)
+        .url(url)
+        .username(username)
+        .password(password)
+        .type(HikariDataSource.class).build();
   }
-
-//  @PersistenceContext(unitName = "h2")
-//  @Primary
-//  @Bean(name = ENTITY_MANAGER)
-//  public LocalContainerEntityManagerFactoryBean entityManagerFactory(EntityManagerFactoryBuilder builder) {
-//    return builder.dataSource(dataSource()).packages("com.jjo.h2.model").persistenceUnit("h2").build();
-//  }
-//
-//  @Primary
-//  @Bean(name = TRANSACTION_MANAGER)
-//  public PlatformTransactionManager transactionManager(
-//      @Qualifier(ENTITY_MANAGER) EntityManagerFactory entityManagerFactory) {
-//    return new JpaTransactionManager(entityManagerFactory);
-//  }
 }
+ 
