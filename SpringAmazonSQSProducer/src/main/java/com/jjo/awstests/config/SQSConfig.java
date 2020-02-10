@@ -9,12 +9,11 @@ import com.amazonaws.services.sqs.AmazonSQSAsync;
 
 @EnableSqs
 @Configuration
-public class SQSMessage {
+public class SQSConfig {
 
   @Bean("queueMessagingTemplate")
-  public QueueMessagingTemplate customQueue(AmazonSQSAsync amazonSQSAsync,
-      @Value("${aws.sqs.producer}") String queueName) {
-    QueueMessagingTemplate messageTemplate = new QueueMessagingTemplate(amazonSQSAsync);
+  public QueueMessagingTemplate customQueue(AmazonSQSAsync amazonSqs, @Value("${aws.sqs.producer}") String queueName) {
+    QueueMessagingTemplate messageTemplate = new QueueMessagingTemplate(amazonSqs);
     messageTemplate.setDefaultDestinationName(queueName);
     return messageTemplate;
   }

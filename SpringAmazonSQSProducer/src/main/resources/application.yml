@@ -1,8 +1,13 @@
+spring:
+   main:
+      allow-bean-definition-overriding: true
+
 server:
    port: 8097
    servlet:
-      contextPath: /AWSTests
+      contextPath: /SQSProducer
 
 aws:
+   profile: mine
    sqs:
-      producer: awstests
+      producer: jjo-test
