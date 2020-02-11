@@ -13,8 +13,8 @@ public class SQSConfig {
 
   @Bean("queueMessagingTemplate")
   public QueueMessagingTemplate customQueue(AmazonSQSAsync amazonSqs, @Value("${aws.sqs.producer}") String queueName) {
-    QueueMessagingTemplate messageTemplate = new QueueMessagingTemplate(amazonSqs);
-    messageTemplate.setDefaultDestinationName(queueName);
-    return messageTemplate;
+//    QueueMessagingTemplate messageTemplate = new QueueMessagingTemplate(amazonSqs);
+//    messageTemplate.setDefaultDestinationName(queueName);
+    return null;
   }
 }
