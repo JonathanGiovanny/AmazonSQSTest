@@ -18,7 +18,19 @@
 
 		<dependency>
 			<groupId>com.jjo</groupId>
+			<artifactId>SpringAmazonSQSPersistence</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jjo</groupId>
 			<artifactId>SpringAmazonSQSService</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jjo</groupId>
+			<artifactId>SpringAmazonSQSConfig</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 
