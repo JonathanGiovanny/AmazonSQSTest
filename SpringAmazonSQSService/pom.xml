@@ -18,5 +18,16 @@
 			<artifactId>SpringAmazonSQSPersistence</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+
+		<dependency>
+			<groupId>com.jjo</groupId>
+			<artifactId>SpringAmazonSQSConfig</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
 	</dependencies>
 </project>

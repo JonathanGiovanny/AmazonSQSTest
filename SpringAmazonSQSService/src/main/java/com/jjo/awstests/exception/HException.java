@@ -51,8 +51,8 @@ public class HException extends RuntimeException {
    */
   public HException(Errors error, Exception e, Object... args) {
     super(error.getMessage(), e);
-    this.userMessage = String.format(error.getCode());
-    this.techMessage = String.format(error.getMessage());
+    this.userMessage = String.format(error.getCode(), args);
+    this.techMessage = String.format(error.getMessage(), args);
   }
 
   /**

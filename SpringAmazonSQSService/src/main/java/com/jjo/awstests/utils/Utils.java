@@ -5,10 +5,15 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Stream;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jjo.awstests.domain.Message;
 import com.jjo.awstests.exception.Errors;
 import com.jjo.awstests.exception.HException;
 import lombok.experimental.UtilityClass;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @UtilityClass
 public class Utils {
 
@@ -28,5 +33,14 @@ public class Utils {
 
   public static RuntimeException throwNotExistingElement(List<Object> fields) {
     return new HException(Errors.NO_DATA, fields.toString());
+  }
+
+  public static String toJson(ObjectMapper objectMapper, Message message) {
+    try {
+      return objectMapper.writeValueAsString(message);
+    } catch (JsonProcessingException e) {
+      log.error(e.getMessage());
+      throw new HException(Errors.JSON_FORMAT, e);
+    }
   }
 }

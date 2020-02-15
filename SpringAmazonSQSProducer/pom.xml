@@ -29,12 +29,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.jjo</groupId>
-			<artifactId>SpringAmazonSQSConfig</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-
-		<dependency>
 			<groupId>org.mapstruct</groupId>
 			<artifactId>mapstruct</artifactId>
 			<version>${mapstruct.version}</version>

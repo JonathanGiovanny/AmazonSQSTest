@@ -24,7 +24,9 @@ public enum Errors {
   LOGIN_FAILED("login.failed", "Login failed"),
 
   UNAUTHORIZED_REQUEST("unauthorized.request", "Cannot access to this resource without authorization"),
-  EXPIRED_TOKEN("token.expired", "Session has expired");
+  EXPIRED_TOKEN("token.expired", "Session has expired"),
+
+  JSON_FORMAT("json.format", "Could not convert to Json");
 
   private String code;
   private String message;
