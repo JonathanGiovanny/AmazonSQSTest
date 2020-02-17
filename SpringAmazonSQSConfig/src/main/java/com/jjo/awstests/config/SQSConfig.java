@@ -9,6 +9,7 @@ import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.regions.AwsRegionProvider;
 import com.amazonaws.services.sqs.AmazonSQSAsync;
 import com.amazonaws.services.sqs.AmazonSQSAsyncClientBuilder;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
 import lombok.NonNull;
 
@@ -27,10 +28,15 @@ public class SQSConfig {
         .build();
   }
 
-  @Bean
-  public QueueMessagingTemplate customQueue(@Value("${aws.sqs.producer}") String queueName) {
+  @Bean(name = {"queueMessagingTemplate", "bidQueueMessaging"})
+  public QueueMessagingTemplate customQueue(@Value("${aws.sqs.queue-bid}") String queueName) {
     QueueMessagingTemplate messageTemplate = new QueueMessagingTemplate(amazonSQSAsync());
     messageTemplate.setDefaultDestinationName(queueName);
     return messageTemplate;
+  }
+
+  @Bean
+  public ObjectMapper buildJacksonObjectMapper() {
+      return new ObjectMapper();
   }
 }

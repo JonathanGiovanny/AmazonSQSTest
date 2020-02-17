@@ -3,12 +3,11 @@ spring:
       allow-bean-definition-overriding: true
 
 server:
-   port: 8097
+   port: 8098
    servlet:
-      contextPath: /SQSProducer
+      contextPath: /SQSCondumer
 
 aws:
    profile: mine
    sqs:
       queue-bid: jjo-queue
-

@@ -1,5 +1,6 @@
 package com.jjo.awstests.services;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cloud.aws.messaging.core.QueueMessagingTemplate;
 import org.springframework.stereotype.Service;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -14,7 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class SQSServiceImpl implements SQSService {
 
-  private @NonNull QueueMessagingTemplate queueMessagingTemplate;
+  private @NonNull @Qualifier("bidQueueMessaging") QueueMessagingTemplate queueMessagingTemplate;
   private @NonNull ObjectMapper objectMapper;
 
   @Override
