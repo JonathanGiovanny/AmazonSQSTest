@@ -7,4 +7,4 @@ aws:
    sqs:
       queue-bid: jjo-queue
 
-logging.level.org.apache.http: DEBUG
+#logging.level.org.apache.http: DEBUG

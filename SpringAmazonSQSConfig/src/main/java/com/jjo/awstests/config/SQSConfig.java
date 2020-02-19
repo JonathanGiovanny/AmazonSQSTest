@@ -2,6 +2,8 @@ package com.jjo.awstests.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.aws.core.env.ResourceIdResolver;
+import org.springframework.cloud.aws.core.region.RegionProvider;
+import org.springframework.cloud.aws.core.region.StaticRegionProvider;
 import org.springframework.cloud.aws.messaging.config.annotation.EnableSqs;
 import org.springframework.cloud.aws.messaging.core.QueueMessagingTemplate;
 import org.springframework.context.annotation.Bean;
@@ -11,6 +13,7 @@ import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.regions.AwsRegionProvider;
 import com.amazonaws.services.sqs.AmazonSQSAsync;
 import com.amazonaws.services.sqs.AmazonSQSAsyncClientBuilder;
+import com.amazonaws.services.sqs.buffered.AmazonSQSBufferedAsyncClient;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
 import lombok.NonNull;
@@ -25,10 +28,17 @@ public class SQSConfig {
   private @NonNull ObjectMapper objectMapper;
 
   private AmazonSQSAsync amazonSQSAsync() {
-    return AmazonSQSAsyncClientBuilder.standard()
+    return new AmazonSQSBufferedAsyncClient(
+        AmazonSQSAsyncClientBuilder.standard()
         .withCredentials(awsCredentialsProvider)
         .withRegion(awsRegionProvider.getRegion())
-        .build();
+        .build()
+      );
+  }
+
+  @Bean
+  public RegionProvider regionProvider() {
+    return new StaticRegionProvider(awsRegionProvider.getRegion());
   }
 
   @Bean(name = {"queueMessagingTemplate", "bidQueueMessaging"})

@@ -43,4 +43,13 @@ public class Utils {
       throw new HException(Errors.JSON_FORMAT, e);
     }
   }
+
+  public static Message fromJson(ObjectMapper objectMapper, String json) {
+    try {
+      return objectMapper.readValue(json, Message.class);
+    } catch (JsonProcessingException e) {
+      log.error(e.getMessage());
+      throw new HException(Errors.JSON_FORMAT, e);
+    }
+  }
 }
